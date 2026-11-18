@@ -26,6 +26,7 @@
 
 @interface MyDelegate : NSObject
 {
+ IBOutlet NSWindow *MainWindow;
  IBOutlet NSWindow *myWindow;
  IBOutlet NSScrollView *scroll;
  IBOutlet NSTextView *message;

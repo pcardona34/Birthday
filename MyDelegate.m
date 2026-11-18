@@ -1,4 +1,4 @@
-/* 
+/*
 ####################################################
 ### A G N o S t e p  -  Desktop - by Patrick Cardona
 ### (c) 2026 - pcardona34 @ Github
@@ -41,7 +41,7 @@
         [str appendFormat:@"%@ (%@)", name, localized_type];
       } // end of for
           
-      [self showEvents: str];
+      [self showMainEvents: str];
   }
 }
 
@@ -124,6 +124,28 @@
     [myWindow center];
     [myWindow makeKeyAndOrderFront:nil];
 }
+
+- (void) showMainEvents: (NSString *) content
+{
+	//Loading but not visible yet: see gsmarkup
+    [NSBundle loadGSMarkupNamed: @"Main-Window" owner: self];
+    // Min Size of the Window
+    NSSize minSize = [MainWindow minSize];
+    	minSize.width = 400;
+    	minSize.height = 200;
+    	[MainWindow setMinSize:minSize];
+    	
+    [scroll setHasVerticalScroller:YES];
+    [scroll setHasHorizontalScroller:NO];
+    [scroll setDocumentView:message];
+    [message setString: content];
+    [message setEditable: NO];
+      
+    // Centering and displaying
+    [MainWindow center];
+    [MainWindow makeKeyAndOrderFront:nil];
+}
+
 
 
 /* ****************************************************************************
@@ -479,28 +501,40 @@
 {
   NSUInteger count = [self eventCountForToday];
   NSLog(@"Count: %lu", (unsigned long)count);
-  
-  NSString *label;      
+
+  NSString *label = nil;
   if (count > 0) {
-    label = (count > 99) ? @"99+" : [NSString stringWithFormat:@"%lu", (unsigned long)count];
-                          
-    NSLog(@"Setting dock Badge Label: %@", label);
-    [dockTile setBadgeLabel: label];
-    [dockTile setShowsApplicationBadge: YES];
-  }else{
-    [dockTile setBadgeLabel: nil];
-    [dockTile setShowsApplicationBadge: NO];
- } 
+    label = (count > 99)
+        ? @"99+"
+        : [NSString stringWithFormat:@"%lu", (unsigned long)count];
+  }
+  NSLog(@"Setting dock Badge Label with : %@", label);
+  [dockTile setBadgeLabel: label];
+  NSLog(@"Got badge label value: %@", [dockTile badgeLabel]);
+  [dockTile setShowsApplicationBadge: (count > 0)];
+  NSLog(@"Status of showsApplicationBadge: %d", 
+    (int)[dockTile showsApplicationBadge]);
+  [dockTile display];
 }
 
 /* ****************************************************************************
   * Close window
   */
-  
+
 - (void) close : (id) sender 
 {
-	[myWindow close];	
+	[myWindow close];
 }
+
+/* ****************************************************************************
+  * Close app
+  */
+
+- (void) terminate : (id) sender 
+{
+	[NSApp terminate: sender];
+}
+
 
 /* ****************************************************************************
  *
@@ -510,10 +544,21 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification 
 {
+ // Diagnosis for Menu:
+ NSLog(@"Main menu: %@", [NSApp mainMenu]);
+ NSLog(@"Main menu items: %lu",
+      (unsigned long)[[[NSApp mainMenu] itemArray] count]);
+
+ [self showEventsToday: nil];
+ // Diagnosis for Active state again
+ NSLog(@"Active: %@",
+      [NSApp isActive] ? @"YES" : @"NO");
+ NSLog(@"Key window: %@", [NSApp keyWindow]);
+ NSLog(@"Main window: %@", [NSApp mainWindow]);
+
  // DockTile was previouly declared in the @interface
- dockTile = [[[NSDockTile alloc] init] autorelease];
+ dockTile = [[NSDockTile  alloc] init];
  [dockTile setOwner: NSApp];
-   
  [self updateBadge]; // We retrieve the badge state once at startup
 
  // Timer to call Update Badge method every 3600 sec. 
@@ -523,5 +568,12 @@
                       userInfo: nil 
                       repeats:YES];
 }
+
+- (void) dealloc
+{
+ [dockTile release];
+ [super dealloc];
+}
+
 
 @end

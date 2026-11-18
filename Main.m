@@ -1,7 +1,7 @@
 /* 
 ####################################################
-### A G N o S t e p  -  Desktop - by Patrick Cardona
-### (c) 2026 - pcardona34 @ Github
+### A G N o S t e p  -  Apps
+### (c) 2026 Patrick Cardona
 ### Author: Patrick Cardona
 ###
 ### Thanks for the GNUstep Developers Community.
@@ -31,9 +31,9 @@ delegate = [MyDelegate new];
 [NSApp setDelegate: delegate];
 
 #ifdef GNUSTEP
-  [NSBundle loadGSMarkupNamed: @"Menu-GNUstep"  owner: delegate];
+  [NSBundle loadGSMarkupNamed: @"Menu-GNUstep"  owner:delegate];
 #else
-  [NSBundle loadGSMarkupNamed: @"Menu-OSX"  owner: delegate];
+  [NSBundle loadGSMarkupNamed: @"Menu-OSX"  owner:delegate];
 #endif
 
 RELEASE (pool);

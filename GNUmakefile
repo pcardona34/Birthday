@@ -23,6 +23,7 @@ Birthday_APPLICATION_ICON = Birthday.tiff
 #
 Birthday_RESOURCE_FILES = \
 Resources/Info-gnustep.plist \
+Resources/Main-Window.gsmarkup \
 Resources/Window.gsmarkup \
 Resources/Menu-GNUstep.gsmarkup \
 Resources/Menu-OSX.gsmarkup \
@@ -51,6 +52,7 @@ Main.m
 #
 Birthday_LANGUAGES = English French
 Birthday_LOCALIZED_RESOURCE_FILES = \
+Main-Window.strings \
 Window.strings \
 Menu-GNUstep.strings \
 Menu-OSX.strings \

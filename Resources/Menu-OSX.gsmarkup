@@ -4,14 +4,19 @@
 (c) 2026 - Patrick Cardona
 An Agnostep Desktop Application
 Under MIT License -->
+
 <gsmarkup>
   <objects>
     <menu type="main">
       <menuItem title="Birthday">
         <menu title="Birthday" type="apple">
+        <menuItem title="Events">
+        <menu title="Events" type="apple">
           <menuItem title="Events of the Day..." keyEquivalent="" action="showEvents:" />
           <menuItem title="Events of the Month..." keyEquivalent="" action="showEventsOfTheMonth:" />
-      <menuItem title="Events of Next Month..." keyEquivalent="" action="showEventsOfNextMonth:" />
+          <menuItem title="Events of Next Month..." keyEquivalent="" action="showEventsOfNextMonth:" />
+        </menu>
+          </menuItem>  
           <menuItem title="Quit" keyEquivalent="q" action="terminate:" />
         </menu>
       </menuItem>
