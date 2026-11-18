@@ -1,0 +1,6 @@
+/* Localized Info Panel strings */
+
+ApplicationDescription = "Rappel des événements familiaux";
+Copyright = "Copyright (C) 2026 - Une application du projet Agnostep";
+CopyrightDescription = "Distribuée sous la Licence MIT";
+

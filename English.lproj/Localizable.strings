@@ -1,0 +1,14 @@
+/* Localizablestrings for Birthday app */
+
+"Event: " = "Event: ";
+"Birthday" = "Birthday";
+"Feast" = "Feast";
+"Unknown" = "Unknown";
+"Today, we celebrate:\n" = "Today, we celebrate:\n";
+"This month, we shall celebrate:\n" = "This month, we shall celebrate:\n";
+"Next month, we shall celebrate:\n" = "Next month, we shall celebrate:\n";
+"birthday" = "birthday";
+"feast" = "feast";
+"Nobody to celebrate today." = "Nobody to celebrate today.";
+"Nobody to celebrate this month." = "Nobody to celebrate this month.";
+"Nobody to celebrate next month." = "Nobody to celebrate next month.";

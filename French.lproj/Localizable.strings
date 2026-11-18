@@ -1,0 +1,15 @@
+/* Localizablestrings for Birthday app */
+
+"Event: " = "\U00C9v\U00E9nement: ";
+"Birthday" = "Anniversaire";
+"Feast" = "Fête";
+"Unknown" = "Inconnu";
+"Today, we celebrate:\n" = "Aujourd'hui, nous c\U00E9l\U00E9brons:\n";
+"This month, we shall celebrate:\n" = "Ce mois-ci, nous célébrerons:\n";
+"Next month, we shall celebrate:\n" = "Le mois prochain, nous célébrerons:\n";
+"birthday" = "anniversaire";
+"feast" = "fête";
+"Nobody to celebrate today." = "Personne n'est à c\U00E9l\U00E9brer aujourd'hui.";
+"Nobody to celebrate this month." = "Personne n'est à c\U00E9l\U00E9brer ce mois-ci.";
+"Nobody to celebrate next month." = "Personne n'est à c\U00E9l\U00E9brer le mois prochain.";
+

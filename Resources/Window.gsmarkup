@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsmarkup>
+<!-- Birthday Window to show events
+(c) 2026 - Patrick Cardona
+An Agnostep Desktop Application
+Under MIT License -->
+<gsmarkup>
+
+  <objects>
+  
+    <window title="Events" id="myWindow" visible="no" delegate="#myDelegate">
+    <vbox>
+    <scrollView id="scroll">
+        <textView id="message" />
+    </scrollView>
+    <button title="Close" id="closer" action="close" target="#myWindow" />
+    </vbox>
+   </window>
+   
+  </objects>
+  
+  <connectors>
+   <outlet source="#NSOwner" target="#myWindow" key="myWindow"/>
+   <outlet source="#NSOwner" target="#scroll" key="scroll"/>
+   <outlet source="#NSOwner" target="#message" key="message"/>
+   <outlet source="#NSOwner" target="#closer" key="closer"/>
+  </connectors>
+  
+</gsmarkup>

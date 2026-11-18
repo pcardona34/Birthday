@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE gsmarkup>
+<!-- Birthday Menu for GNUstep
+(c) 2026 - Patrick Cardona
+An Agnostep Desktop Application
+Under MIT License -->
+<gsmarkup>
+  <objects>
+    <menu type="main">
+      <menu title="Info">
+        <menuItem title="Info Panel..." keyEquivalent="" action="orderFrontStandardInfoPanel:" />
+        <menuItem title="Help..." keyEquivalent="?" action="orderFrontHelpPanel:" />
+      </menu>
+      <menuItem title="Events of the Day..." keyEquivalent="" action="showEventsToday:" />
+      <menuItem title="Events of the Month..." keyEquivalent="" action="showEventsOfTheMonth:" />
+      <menuItem title="Events of Next Month..." keyEquivalent="" action="showEventsOfNextMonth:" />
+      <menuItem title="Quit" keyEquivalent="q" action="terminate:" />
+    </menu>
+  </objects>
+</gsmarkup>

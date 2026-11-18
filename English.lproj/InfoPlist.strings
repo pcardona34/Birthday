@@ -1,0 +1,6 @@
+/* Localized Info Panel strings */
+
+ApplicationDescription = "A Birthday Reminder";
+Copyright = "Copyright (C) 2026 - An Agnostep Application";
+CopyrightDescription = "Released under MIT License";
+
