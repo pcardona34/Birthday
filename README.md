@@ -39,9 +39,9 @@ Run [AGNoStep Apps Manager](../../../agnostep-apps-manager), then:
 
 ### Install by yourself
 
-- Create a `PRIVATE` folder in your Home `Documents` folder.
-- Copy the sample with the name `Birthdays` in this `PRIVATE` folder.
-- In the `Scripts` folder, change mode of each scriptwith `chmod +x` command.
+- Create a `Private` folder in your Home `Documents` folder.
+- Copy the sample with the name `Birthdays` in this `Private` folder.
+- In the `Scripts` folder, change mode of each script with `chmod +x` command.
 - With `sudo`, copy all the scripts from`Scripts` to `/usr/local/bin`
 - Build, then install with `sudo` the `Birthday.app`.
 
